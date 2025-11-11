@@ -62,9 +62,16 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - images/cce_space.jpeg
+    - images/cce_space.jpg
     - images/for_good_luck.jpg
-    - images/
+    - images/koat.jpg
+    - images/loer.jpg
+    - images/nako.jpg
+    - images/nostalgia.jpg
+    - images/sanjo.jpg
+    - images/socio.jpg
+    - images/soree.jpg
+    - images/taki.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
