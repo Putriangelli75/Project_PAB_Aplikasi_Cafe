@@ -2,6 +2,7 @@ import 'package:aplikasi_cafe/models/cafe.dart';
 
 var cafeList = [
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Nostalgia',
     location: 'Magelang, Jawa Tengah',
     description:
@@ -18,6 +19,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Koat',
     location: 'Magelang, Jawa Tengah',
     description:
@@ -34,6 +36,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe  For Good Luck',
     location: 'Daerah Istimewa Yogyakarta',
     description:
@@ -50,6 +53,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Loer',
     location: 'Klaten, Jawa Tengah',
     description:
@@ -66,6 +70,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Nako',
     location: 'Klaten, Jawa Tengah',
     description:
@@ -82,6 +87,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Sanjo',
     location: 'Daerah Istimewa Yogyakarta',
     description:
@@ -98,6 +104,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Socio',
     location: 'Daerah Istimewa Yogyakarta',
     description:
@@ -114,6 +121,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Soree',
     location: 'Klaten, Jawa Tengah',
     description:
@@ -130,6 +138,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe Taki',
     location: 'Malang, Jawa Timur',
     description:
@@ -146,6 +155,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
+    headerPhotos: [],
     name: 'Cafe CCE Space',
     location: 'Malang, Jawa Timur',
     description:

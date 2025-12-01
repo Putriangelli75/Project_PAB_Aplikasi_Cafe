@@ -5,6 +5,7 @@ class Cafe {
   final String built;
   final String type;
   final String imageAsset;
+  final List<String> headerPhotos;
   final List<String> imageUrls;
   bool isFavorite;
 
@@ -15,6 +16,7 @@ class Cafe {
     required this.built,
     required this.type,
     required this.imageAsset,
+    required this.headerPhotos,
     required this.imageUrls,
     this.isFavorite = false,
   });
