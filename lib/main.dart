@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:aplikasi_cafe/screens/dashboard_screen.dart';
+import 'package:aplikasi_cafe/screens/initialization_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: const DashboardScreen(),
+      home: const InitializationScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
