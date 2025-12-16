@@ -2,7 +2,7 @@ import 'package:aplikasi_cafe/models/cafe.dart';
 
 var cafeList = [
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/nostalgia/nostalgia.jpg'],
     name: 'Cafe Nostalgia',
     location: 'Jl. Bangau, 9 Ilir, Ilir Timur II, Kota Palembang',
     description: 'Kopi Nostalgia berlokasi di Jalan Bangau, Palembang, menghadirkan suasana hangat dan nyaman bagi penikmat kopi. Desain interiornya klasik modern dengan sentuhan vintage yang menambah kesan “nostalgia”, cocok untuk bekerja, bersantai, atau berbincang santai. Menu andalannya meliputi aneka kopi susu, pastry, dan makanan ringan. Café ini menjadi tempat favorit kalangan muda dan pekerja lepas karena atmosfernya tenang dan estetik. Jam operasionalnya mulai pukul 08.00 hingga 22.00 WIB, dengan pelayanan ramah serta area indoor dan outdoor yang tertata rapi, menjadikannya tempat ideal melepas penat di tengah kota Palembang',
@@ -12,7 +12,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/koat/koat.jpg'],
     name: 'Cafe Koat',
     location: 'Jl. Angkatan 45, Lorok Pakjo, Kec. Ilir Barat I, Kota Palembang, Sumatera Selatan, Indonesia',
     description: 'Koat Coffee adalah café modern dengan desain minimalis yang menghadirkan pengalaman ngopi dengan pemandangan menarik di sekitar jalur LRT Palembang. Walau data jam buka belum pasti, café ini biasanya beroperasi dari pagi hingga malam hari. Menu-menu kopinya menggunakan biji pilihan lokal yang diracik secara profesional. Suasananya nyaman dengan pencahayaan lembut dan area kerja yang tenang, cocok untuk produktivitas. Koat Coffee juga sering mengadakan acara musik akustik dan pameran seni kecil. Tempat ini semakin dikenal di kalangan pecinta kopi muda karena perpaduan konsep urban dan atmosfer rileks yang menenangkan',
@@ -22,7 +22,7 @@ var cafeList = [
     isFavorite: true,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/for-good-luck/for_good_luck.jpg'],
     name: 'Cafe For Good Luck',
     location: 'Jl. Sri Gunting, 9 Ilir, Kec. Ilir Tim. II, Kota Palembang 30113',
     description:
@@ -33,7 +33,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/loer/loer.jpg'],
     name: 'Cafe Loer',
     location: 'Jl. Kapten A. Rivai, Jl. MP Mangkunegara No. 6B',
     description:
@@ -44,7 +44,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/nako/nako.jpg'],
     name: 'Cafe Nako',
     location: 'Jl. Demang Lebar Daun, Kecamatan Ilir Barat I, Kota Palembang',
     description:
@@ -55,30 +55,29 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/sanjo/sanjo.jpg'],
     name: 'Cafe Sanjo',
     location: 'Jl. Diponegoro No. 22, Talang Semut, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan',
     description:
-    'Café Sanjo Palembang merupakan tempat nongkrong modern yang menggabungkan suasana nyaman dengan cita rasa khas Palembang. Terletak di lokasi strategis di pusat kota, café ini menjadi pilihan favorit bagi anak muda, keluarga, dan pekerja yang ingin bersantai atau bekerja sambil menikmati hidangan lezat',
+    'Café Sanjo dikenal dengan suasana industrial minimalis di kawasan Talang Semut. Menu andalannya kopi susu Sanjo, variasi mocktail, serta pilihan makanan berat yang cocok untuk makan siang atau dinner santai. Area indoor ber-AC dan outdoor kecil membuatnya nyaman untuk kerja santai maupun nongkrong.',
     jamOperasional: 'setiap hari mulai pukul 10.00 hingga sekitar 23.00',
-    // Menggunakan gambar sementara sampai aset Cafe Sanjo tersedia
-    imageAsset: 'images/nostalgia/nostalgia.jpg',
-    imageUrls: ['images/nostalgia/nostalgia.jpg'],
+    imageAsset: 'images/sanjo/sanjo.jpg',
+    imageUrls: ['images/sanjo/sanjo.jpg'],
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/nagara/nagara.jpg'],
     name: 'Cafe Nagara',
     location: 'Jl. Letjen Harun Sohar, Palembang, Sumatera Selatan',
     description:
-    'Candi Sari, atau Candi Bendah, adalah candi Buddha yang terletak di Desa Tirtomartani, Sleman, Yogyakarta. Dibangun pada abad ke-8 dan ke-9 saat Kerajaan Mataram Kuno, candi ini memiliki 9 stupa di bagian atasnya yang tersusun dalam 3 deretan sejajar, mirip dengan Candi Borobudur. Bangunannya mirip dengan Candi Plaosan dan memiliki ruangan bertingkat dua di bawah stupa, mungkin digunakan untuk meditasi biksu. Dulu digunakan sebagai Vihara Buddha untuk belajar dan mengajar para biksu.',
+    'Nagara Cafe & Eatery mengusung konsep modern tropis dengan area indoor dan outdoor yang luas. Lokasinya strategis di dekat bandara, cocok untuk meeting atau bersantai sebelum bepergian. Menu variatif dari kopi, teh, hingga makanan Nusantara dan western, dengan harga menengah dan suasana nyaman.',
     jamOperasional: '10.00 – 24.00 WIB',
     imageAsset: 'images/nagara/nagara.jpg',
     imageUrls: ['images/nagara/nagara.jpg'],
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/soree/soree.jpg'],
     name: 'Cafe Soree',
     location: 'Jl. Veteran No. 531, 20 Ilir D. I., Palembang, Sumatera Selatan 30114',
     description:
@@ -89,7 +88,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/taki/taki.jpg'],
     name: 'Cafe Taki',
     location: 'Jl. Taman Kenten, 8 Ilir – Palembang (sebelah Quattro Mini Soccer)',
     description:
@@ -100,7 +99,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/cce-space/cce_space.jpg'],
     name: 'Cafe CCE Space',
     location: ' Jl. Taman Kenten, 8 Ilir, Kec. Ilir Tim. II, Kota Palembang, Sumatera Selatan',
     description:
@@ -111,7 +110,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/dayone/dayone.jpg'],
     name: 'Cafe DayOne',
     location: 'Jl. Letkol Iskandar, Palembang, Sumatera Selatan',
     description:
@@ -122,7 +121,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/days-cafe/days-cafe.jpg'],
     name: 'Days Cafe',
     location: 'Jl. Dr. M. Isa III, Palembang, Sumatera Selatan',
     description:
@@ -133,7 +132,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/eightynine/eightynine.jpg'],
     name: 'Cafe Eightynine',
     location: 'Jl. Rajawali, Palembang, Sumatera Selatan',
     description:
@@ -144,7 +143,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/enamdua/enamdua.jpg'],
     name: 'Cafe Enamdua',
     location: 'Jl. Angkatan 45, Palembang, Sumatera Selatan',
     description:
@@ -155,7 +154,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/kopi-dari-hati/kopi-dari-hati.jpg'],
     name: 'Cafe Kopi dari hati',
     location: 'Jl. Kolonel Atmo, Palembang, Sumatera Selatan',
     description:
@@ -166,7 +165,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/luthier/luthier.jpg'],
     name: 'Cafe Luthier',
     location: 'Jl. Bangau No. 170C, Palembang, Sumatera Selatan',
     description:
@@ -177,7 +176,7 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: [],
+    headerPhotos: ['images/york-cafe/york-cafe.jpg'],
     name: 'Cafe York',
     location: 'Jl. Radial, Palembang, Sumatera Selatan',
     description:
