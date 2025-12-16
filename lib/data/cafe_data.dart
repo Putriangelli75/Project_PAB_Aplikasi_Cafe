@@ -6,7 +6,7 @@ var cafeList = [
     name: 'Cafe Nostalgia',
     location: 'Jl. Bangau, 9 Ilir, Ilir Timur II, Kota Palembang',
     description: 'Kopi Nostalgia berlokasi di Jalan Bangau, Palembang, menghadirkan suasana hangat dan nyaman bagi penikmat kopi. Desain interiornya klasik modern dengan sentuhan vintage yang menambah kesan “nostalgia”, cocok untuk bekerja, bersantai, atau berbincang santai. Menu andalannya meliputi aneka kopi susu, pastry, dan makanan ringan. Café ini menjadi tempat favorit kalangan muda dan pekerja lepas karena atmosfernya tenang dan estetik. Jam operasionalnya mulai pukul 08.00 hingga 22.00 WIB, dengan pelayanan ramah serta area indoor dan outdoor yang tertata rapi, menjadikannya tempat ideal melepas penat di tengah kota Palembang',
-    jamOperasional: 'Dilaporkan buka dari jam 08.00 sampai jam 22.00',
+    jamOperasional: 'buka dari jam 08.00 sampai jam 22.00',
     imageAsset: 'images/nostalgia/nostalgia.jpg',
     imageUrls: ['images/nostalgia/nostalgia.jpg'],
     isFavorite: false,
