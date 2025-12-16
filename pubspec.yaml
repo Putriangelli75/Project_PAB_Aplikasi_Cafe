@@ -58,11 +58,27 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
   assets:
-    - images/
+    # Cafe Images
+    - images/cce-space/cce_space.jpg
+    - images/dayone/dayone.jpg
+    - images/days-cafe/days-cafe.jpg
+    - images/eightynine/eightynine.jpg
+    - images/enamdua/enamdua.jpg
+    - images/for-good-luck/for_good_luck.jpg
+    - images/koat/koat.jpg
+    - images/kopi-dari-hati/kopi-dari-hati.jpg
+    - images/loer/loer.jpg
+    - images/luthier/luthier.jpg
+    - images/nagara/nagara.jpg
+    - images/nako/nako.jpg
+    - images/nostalgia/nostalgia.jpg
+    - images/soree/soree.jpg
+    - images/taki/taki.jpg
+    - images/york-cafe/york-cafe.jpg
+    
+    # Add placeholder image (if you plan to add one later)
+    # - images/placeholder.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

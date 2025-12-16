@@ -7,13 +7,8 @@ var cafeList = [
     location: 'Jl. Bangau, 9 Ilir, Ilir Timur II, Kota Palembang', 
     description: 'Kopi Nostalgia berlokasi di Jalan Bangau, Palembang, menghadirkan suasana hangat dan nyaman bagi penikmat kopi. Desain interiornya klasik modern dengan sentuhan vintage yang menambah kesan “nostalgia”, cocok untuk bekerja, bersantai, atau berbincang santai. Menu andalannya meliputi aneka kopi susu, pastry, dan makanan ringan. Café ini menjadi tempat favorit kalangan muda dan pekerja lepas karena atmosfernya tenang dan estetik. Jam operasionalnya mulai pukul 08.00 hingga 22.00 WIB, dengan pelayanan ramah serta area indoor dan outdoor yang tertata rapi, menjadikannya tempat ideal melepas penat di tengah kota Palembang',
     jamOperasional: 'Dilaporkan buka dari jam 08.00 sampai jam 22.00',
-    imageAsset: 'images/nostalgia.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/4f/71/borobudur-and-the-sky.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/5d/36/borobudur-airial-view.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/4d/c7/borobudur-and-the-sky.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/47/0e/borobudur-sunset-moment.jpg',
-    ],
+    imageAsset: 'images/nostalgia/nostalgia.jpg',
+
     isFavorite: false,
   ),
   Cafe(
@@ -22,14 +17,8 @@ var cafeList = [
     location: 'Jl. Angkatan 45, Lorok Pakjo, Kec. Ilir Barat I, Kota Palembang, Sumatera Selatan, Indonesia',
     description: 'Koat Coffee adalah café modern dengan desain minimalis yang menghadirkan pengalaman ngopi dengan pemandangan menarik di sekitar jalur LRT Palembang. Walau data jam buka belum pasti, café ini biasanya beroperasi dari pagi hingga malam hari. Menu-menu kopinya menggunakan biji pilihan lokal yang diracik secara profesional. Suasananya nyaman dengan pencahayaan lembut dan area kerja yang tenang, cocok untuk produktivitas. Koat Coffee juga sering mengadakan acara musik akustik dan pameran seni kecil. Tempat ini semakin dikenal di kalangan pecinta kopi muda karena perpaduan konsep urban dan atmosfer rileks yang menenangkan',
     jamOperasional: 'buka 24 jam',
-    imageAsset: 'images/koat.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/8d/bd/dc/photo1jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/30/84/fe/detail.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/07/9c/66/49/parc-du-monastere.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/07/64/89/fe/candi-mendut-temple.jpg',
-    ],
-    isFavorite: false,
+    imageAsset: 'images/koat/koat.jpg',
+    isFavorite: true,
   ),
   Cafe(
     headerPhotos: [],
@@ -38,13 +27,7 @@ var cafeList = [
     description:
     'For Good Luck atau FGL Café yang berlokasi di Jalan Sri Gunting, Palembang, menghadirkan suasana cerah dan ramah keluarga. Tempat ini terkenal dengan area luas, desain interior estetik, serta fasilitas ramah anak seperti area bermain kecil. FGL menjadi tempat ideal untuk sarapan, brunch, atau ngopi sore karena buka mulai 07.00 hingga 23.00 WIB. Menu andalannya berupa kopi artisan, pasta, dan dessert kekinian. Pengunjung menyukai ambience hangat dan pelayanan yang cepat. Dengan konsep “family-friendly coffee space”, FGL berhasil menjadi salah satu café populer di Palembang yang cocok untuk semua kalangan dan suasana.',
     jamOperasional: 'buka dari pukul 07.00 – 23.00 setiap hari.',
-    imageAsset: 'images/for-good-luck.jpg',
-    imageUrls: [
-      'http://media-cdn.tripadvisor.com/media/photo-o/11/d3/f4/02/main-prambanan-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/d3/f3/fb/main-prambanan-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/21/b5/prambanan-diwaktu-malam.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/cd/21/a1/prambanan-yang-luas-dan.jpg',
-    ],
+    imageAsset: 'images/for-good-luck/for_good_luck.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -54,13 +37,7 @@ var cafeList = [
     description:
     'Rumah Loer merupakan jaringan café lokal kebanggaan Palembang yang sudah memiliki beberapa cabang, antara lain di Jalan Kapten A. Rivai dan Jalan MP Mangkunegara. Dengan konsep “kopi lokal rasa internasional”, café ini memadukan nuansa modern dan kearifan lokal. Interiornya hangat, dipenuhi aroma kopi khas nusantara. Salah satu cabangnya buka dari 06.00 pagi hingga 02.00 dini hari, melayani pelanggan dari waktu sarapan hingga nongkrong malam. Menu andalannya meliputi kopi susu Loer, makanan tradisional, dan camilan modern. Rumah Loer juga sering menjadi lokasi event musik dan komunitas kreatif Palembang',
     jamOperasional: 'buka dari 06.00 - 02.00 (pagi sampai larut) di lokasi Kota Tengah',
-    imageAsset: 'images/loer.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/80/lumbung-temple.jpg',
-      'http://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/73/lumbung-temple.jpg',
-      'http://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/21/lumbung-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/28/11/e1/33/lumbung-temple.jpg',
-    ],
+    imageAsset: 'images/loer/loer.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -70,13 +47,7 @@ var cafeList = [
     description:
     'kopi Nako kini hadir di Jalan Demang Lebar Daun, Palembang, membawa suasana khas konsep “ngopi terbuka” yang populer di berbagai kota. Tempatnya luas, dengan area indoor ber-AC dan outdoor garden yang cocok untuk sore atau malam hari. Desainnya didominasi kaca dan beton modern minimalis. Kopi Nako dikenal dengan menu “es kopi nako” dan berbagai varian minuman susu-kopi yang terjangkau. Beberapa cabangnya bahkan buka 24 jam, menjadikannya tempat nongkrong favorit semua kalangan. Suasana hangat, ramai namun tetap nyaman membuat Kopi Nako jadi ikon baru dunia kopi Palembang',
     jamOperasional: 'buka 24 jam',
-    imageAsset: 'images/nako.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/16/29/03/ec/dsc-5480-largejpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/13/9a/31/8e/caption.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/14/78/fd/64/dsc-0395-largejpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/16/10/f6/55/20181224-104447-largejpg.jpg',
-    ],
+    imageAsset: 'images/nako/nako.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -86,13 +57,8 @@ var cafeList = [
     description:
     'Café Sanjo Palembang merupakan tempat nongkrong modern yang menggabungkan suasana nyaman dengan cita rasa khas Palembang. Terletak di lokasi strategis di pusat kota, café ini menjadi pilihan favorit bagi anak muda, keluarga, dan pekerja yang ingin bersantai atau bekerja sambil menikmati hidangan lezat',
     jamOperasional: 'setiap hari mulai pukul 10.00 hingga sekitar 23.00',
-    imageAsset: 'images/sanjo.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/11/49/7f/c6/img-20171102-100329-largejpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/0d/d1/15/1b/papan-nama-peringatan.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/0d/b4/4a/9d/caption.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/0d/bd/3b/88/20161127-152738-largejpg.jpg',
-    ],
+    // Perlu ditambahkan gambar untuk Cafe Sanjo
+    imageAsset: 'images/placeholder.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -102,13 +68,7 @@ var cafeList = [
     description:
     'Candi Sari, atau Candi Bendah, adalah candi Buddha yang terletak di Desa Tirtomartani, Sleman, Yogyakarta. Dibangun pada abad ke-8 dan ke-9 saat Kerajaan Mataram Kuno, candi ini memiliki 9 stupa di bagian atasnya yang tersusun dalam 3 deretan sejajar, mirip dengan Candi Borobudur. Bangunannya mirip dengan Candi Plaosan dan memiliki ruangan bertingkat dua di bawah stupa, mungkin digunakan untuk meditasi biksu. Dulu digunakan sebagai Vihara Buddha untuk belajar dan mengajar para biksu.',
     jamOperasional: '10.00 – 24.00 WIB',
-    imageAsset: 'images/nagara.jpg',
-    imageUrls: [
-      'http://media-cdn.tripadvisor.com/media/photo-o/0d/7a/26/27/p-20150104-102350-hdr.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/17/e4/b5/32/komplek-candi-sari.jpg',
-      'http://media-cdn.tripadvisor.com/media/photo-o/13/46/0c/0e/cube.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/13/46/09/6d/high-wall.jpg',
-    ],
+    imageAsset: 'images/nagara/nagara.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -119,12 +79,6 @@ var cafeList = [
     'Soree Café yang beralamat di Jalan Veteran No.176, Palembang, dikenal sebagai tempat nongkrong estetik dengan dua lantai berdesain modern elegan. Setiap sudutnya fotogenik, menjadikannya spot favorit untuk foto maupun bersantai. Soree menyajikan hidangan fusion Asia dan Barat dengan cita rasa khas, serta kopi premium yang disukai pengunjung. Dengan kisaran harga menengah, café ini ramai dikunjungi kalangan muda dan profesional muda. Jam buka 10.00 hingga 23.00 WIB, cocok untuk lunch meeting atau dinner santai. Suasana hangat, pelayanan ramah, serta musik lembut menjadikan Soree salah satu destinasi kopi terbaik di Palembang',
     jamOperasional: 'buka pukul 10.00-23.00 WIB',
     imageAsset: 'images/soree.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/15/64/fe/2c/candi-plaosan-nan-exotic.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/0b/9b/16/eb/candi-plaosan-merupakan.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/04/d1/be/8d/candi-plaosan.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/28/14/e5/d4/caption.jpg',
-    ],
     isFavorite: false,
   ),
   Cafe(
@@ -134,13 +88,7 @@ var cafeList = [
     description:
     'Taki Coffee & Eatery terletak di Jalan Taman Kenten, Palembang, tepat di samping Quattro Mini Soccer. Café ini memiliki konsep muda dan energik, dengan dekorasi modern serta area outdoor luas yang sering menjadi tempat nongkrong malam. Jam operasionalnya panjang, yakni 11.00 siang hingga 03.00 pagi, menjadikannya pilihan pas untuk anak muda yang suka nongkrong larut malam. Menu utamanya beragam kopi, minuman non-kafein, serta makanan western dan lokal. Musik dan suasana hangatnya membuat Taki selalu ramai, terutama di akhir pekan. Tempat ini sering menjadi lokasi kumpul komunitas kreatif dan musik akustik',
     jamOperasional: 'buka 11.00-03.00 pagi',
-    imageAsset: 'images/taki.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/06/c9/d4/f2/candi-singosari.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/1a/ca/37/49/candi-cungkup-candirenggo.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/15/a2/c0/8d/dvarapala.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/15/a2/c0/88/singosari-temple-kala.jpg',
-    ],
+    imageAsset: 'images/taki/taki.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -151,12 +99,6 @@ var cafeList = [
     'CCE Space terletak di Jalan Taman Kenten, Palembang, dikenal sebagai café dengan konsep modern dan ruang terbuka yang luas. Tempat ini menjadi pilihan favorit mahasiswa dan pekerja karena buka 24 jam setiap hari, cocok untuk nongkrong malam atau mengerjakan tugas hingga larut. Interiornya mengusung gaya industrial minimalis dengan pencahayaan hangat yang nyaman. Menu yang ditawarkan bervariasi, mulai dari kopi, teh, hingga makanan ringan dan berat. Suasana malamnya hidup namun tetap tenang, menjadikan CCE Space salah satu spot nongkrong paling fleksibel di Palembang bagi siapa pun yang mencari tempat produktif sekaligus santai',
     jamOperasional: 'buka 24 jam setiap hari',
     imageAsset: 'images/cce-space.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
     isFavorite: false,
   ),
   Cafe(
@@ -167,12 +109,6 @@ var cafeList = [
     'DAYONE Coffee Indonesia menyajikan kopi spesialti dengan kualitas konsisten dan harga terjangkau. Suasana cafe modern dan nyaman mendukung pengunjung untuk bekerja maupun bersantai. Menu kopi bervariasi dari espresso hingga latte, disertai menu camilan dan dessert. Area indoor dan outdoor tersedia untuk kenyamanan pengunjung. Tempat ini cocok bagi mahasiswa, pekerja, dan pecinta kopi.',
     jamOperasional: '08.00 – 22.00 WIB',
     imageAsset: 'images/dayone.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
     isFavorite: false,
   ),
   Cafe(
@@ -182,13 +118,7 @@ var cafeList = [
     description:
     'Days Cafe menawarkan suasana hangat dan nyaman, ideal untuk keluarga maupun anak muda. Menu kopi, teh, minuman segar, dan makanan ringan hingga berat tersedia lengkap. Interior modern dengan pencahayaan natural membuat pengunjung betah berlama-lama. Area duduk outdoor juga disediakan untuk menikmati udara segar. Cocok untuk santai sore, meeting kecil, atau hangout bersama teman',
     jamOperasional: '10.00 – 22.00 WIB',
-    imageAsset: 'images/days-cafe.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
+    imageAsset: 'images/days-cafe/days-cafe.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -199,12 +129,6 @@ var cafeList = [
     'EightyNine Coffee menawarkan suasana nyaman dengan desain interior minimalis modern. Menu kopi beragam, termasuk single origin, espresso, dan minuman signature. Cafe ini juga menyediakan minuman non-kopi dan snack ringan. Area duduk indoor dan outdoor cocok untuk nongkrong atau bekerja. Tempat ini populer bagi mahasiswa dan pekerja muda yang mencari suasana santai',
     jamOperasional: '09.00 – 22.00 WIB',
     imageAsset: 'images/eightynine.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
     isFavorite: false,
   ),
   Cafe(
@@ -212,15 +136,9 @@ var cafeList = [
     name: 'Cafe Enamdua',
     location: 'Jl. Angkatan 45, Palembang, Sumatera Selatan',
     description:
-    'Enamdua Coffee & Eatery menawarkan konsep modern dan nyaman. Menu meliputi kopi spesialti, minuman kekinian, serta makanan berat dan ringan. Area indoor dan outdoor luas, cocok untuk pertemuan santai atau bekerja. Suasana hangat dan pelayanan ramah menambah kenyamanan pengunjung. Cafe ini populer di kalangan mahasiswa dan pekerja muda',
+    'Enamdua Coffee & Eatery menawarkan konsep modern dan nyaman. Menu meliputi kopi spesialti, minuman kekinian, serta makanan berat dan ringan. Area indoor dan outdoor luas, cocok untuk pertemuan santai atau bekerja. Suasana hangat dan pelayanan ramah menambah kenyamanan pengunjung. Cafe ini populer di kalangan mahasiswa dan pekerja muda',
     jamOperasional: '10.00 – 22.00 WIB',
-    imageAsset: 'images/enamdua.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
+    imageAsset: 'images/enamdua/enamdua.jpg',
     isFavorite: false,
   ),
   Cafe(
@@ -231,12 +149,6 @@ var cafeList = [
     'Kopi Dari Hati & Toast menggabungkan konsep modern dengan menu kopi dan toast kekinian. Suasana cafe santai dan nyaman, cocok untuk anak muda maupun mahasiswa. Menu andalan adalah es kopi susu dan berbagai toast dengan topping unik. Area duduk indoor dan outdoor instagramable. Tempat ini cocok untuk nongkrong, belajar, atau meeting kecil',
     jamOperasional: '10.00 – 23.00 WIB',
     imageAsset: 'images/kopi-dari-hati.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
     isFavorite: false,
   ),
   Cafe(
@@ -247,12 +159,6 @@ var cafeList = [
     'Luthier Coffee menawarkan suasana tenang dan cozy, cocok untuk bekerja, membaca, atau bersantai. Menu utama adalah kopi nusantara hasil sangrai sendiri dengan cita rasa khas. Cafe ini menyediakan camilan ringan dan dessert untuk menemani kopi. Interior nyaman dengan pencahayaan hangat mendukung aktivitas fokus. Pengunjung dapat menikmati kopi sambil mendengarkan musik ringan dan menikmati dekorasi minimalis',
     jamOperasional: '07.00 – 22.00 WIB',
     imageAsset: 'images/luthier.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
     isFavorite: false,
   ),
   Cafe(
@@ -263,12 +169,6 @@ var cafeList = [
     'York Cafe mengusung konsep industrial modern dengan interior stylish. Menu kopi lengkap, dari espresso hingga signature drinks, dilengkapi makanan ringan. Cafe ini cocok untuk bekerja, meeting, atau nongkrong bersama teman. Suasana nyaman dengan pencahayaan hangat mendukung pengalaman bersantai. Area indoor dan semi-outdoor tersedia untuk fleksibilitas',
     jamOperasional: '09.00 – 22.00 WIB',
     imageAsset: 'images/york-cafe.jpg',
-    imageUrls: [
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a3/photo2jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/08/75/ab/a1/photo0jpg.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f7/12/jhago-temple.jpg',
-      'https://media-cdn.tripadvisor.com/media/photo-o/05/60/f6/e5/jhago-temple.jpg',
-    ],
     isFavorite: false,
   ),
 ];
