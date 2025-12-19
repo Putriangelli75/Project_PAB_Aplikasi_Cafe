@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:aplikasi_cafe/models/cafe.dart';
+import 'package:aplikasi_cafe/screens/details_screen.dart';
+import 'package:aplikasi_cafe/screens/home_screen.dart';
+import 'package:aplikasi_cafe/utils/favorite_manager.dart';
 
-class FavoriteScreen extends StatelessWidget {
+class FavoriteScreen extends StatefulWidget {
   const FavoriteScreen({super.key});
+
+  @override
+  State<FavoriteScreen> createState() => _FavoriteScreenState();
+}
+
+class _FavoriteScreenState extends State<FavoriteScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -10,356 +24,375 @@ class FavoriteScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // Header Section
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  // App Logo/Icon
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFFF6B35),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: const Icon(
-                      Icons.apps,
-                      color: Colors.white,
-                      size: 24,
-                    ),
-                  ),
-                  
-                  // User Info
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'Hello Fadilah',
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
-                            ),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                Icons.location_on,
-                                color: Color(0xFF2196F3),
-                                size: 16,
-                              ),
-                              const SizedBox(width: 4),
-                              const Text(
-                                'Jakarta, INA',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.grey,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  
-                  // Profile Picture
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Colors.grey.shade300),
-                    ),
-                    child: ClipOval(
-                      child: Image.asset(
-                        'images/profile_placeholder.png',
-                        width: 40,
-                        height: 40,
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            color: Colors.grey[300],
-                            child: const Icon(
-                              Icons.person,
-                              size: 20,
-                              color: Colors.grey,
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            
-            // Main Content
+            _buildHeader(),
             Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Travel Package Section
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'Travel Package',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                          ),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            // TODO: Implement see more functionality
-                          },
-                          child: const Text(
-                            'See more',
-                            style: TextStyle(
-                              color: Color(0xFF2196F3),
-                              fontSize: 14,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    
-                    const SizedBox(height: 16),
-                    
-                    // Search Bar
-                    Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[100],
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Search travel packages...',
-                          prefixIcon: const Icon(Icons.search, color: Colors.grey),
-                          border: InputBorder.none,
-                          contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                        ),
-                      ),
-                    ),
-                    
-                    const SizedBox(height: 24),
-                    
-                    // Travel Package Cards
-                    _buildTravelPackageCards(),
-                  ],
+              child: StreamBuilder(
+                stream: Stream.periodic(
+                  const Duration(milliseconds: 100),
+                  (_) {},
                 ),
+                builder: (context, snapshot) {
+                  final likedCafes = FavoriteManager.favoriteCafes;
+                  return likedCafes.isEmpty
+                      ? _buildEmptyFavoritesState()
+                      : _buildLikedCafesList(likedCafes);
+                },
               ),
             ),
           ],
         ),
       ),
-      // Bottom Navigation Bar
-      bottomNavigationBar: _buildBottomNavigationBar(),
     );
   }
 
-  Widget _buildTravelPackageCards() {
-    final packages = [
-      {
-        'title': 'Flaminggo',
-        'location': 'South Africa',
-        'image': 'flamingo',
-        'isFavorite': true,
-      },
-      {
-        'title': 'Desert',
-        'location': '',
-        'image': 'desert',
-        'isFavorite': false,
-      },
-      {
-        'title': 'Wild Animal',
-        'location': 'South Africa',
-        'image': 'zebras',
-        'isFavorite': true,
-      },
-    ];
-
-    return ListView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      itemCount: packages.length,
-      itemBuilder: (context, index) {
-        final package = packages[index];
-        final title = package['title'] as String;
-        final location = package['location'] as String;
-        final image = package['image'] as String;
-        final isFavorite = package['isFavorite'] as bool;
-        
-        return Container(
-          width: double.infinity,
-          height: 200,
-          margin: const EdgeInsets.only(bottom: 16),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
-                spreadRadius: 1,
-                blurRadius: 8,
-                offset: const Offset(0, 2),
-              ),
-            ],
+  Widget _buildHeader() {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              color: const Color(0xFF6B5CE6),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: const Icon(Icons.favorite, color: Colors.white, size: 24),
           ),
-          child: Stack(
-            children: [
-              // Package Image
-              ClipRRect(
-                borderRadius: BorderRadius.circular(16),
-                child: Container(
-                  width: double.infinity,
-                  height: 200,
-                  color: Colors.grey[300],
-                  child: Stack(
-                    children: [
-                      // Placeholder for image
-                      Center(
-                        child: Icon(
-                          title == 'Flaminggo' ? Icons.flutter_dash :
-                          title == 'Desert' ? Icons.landscape :
-                          Icons.pets,
-                          color: Colors.grey[600],
-                          size: 50,
-                        ),
+          const Text(
+            'Kafe Favorit',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w700,
+              color: Colors.black,
+            ),
+          ),
+          Container(
+            width: 40,
+            height: 40,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.grey.shade300),
+            ),
+            child: ClipOval(
+              child: Image.asset(
+                'images/profile_placeholder.png',
+                width: 40,
+                height: 40,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    color: Colors.grey[300],
+                    child: const Icon(
+                      Icons.person,
+                      size: 20,
+                      color: Colors.grey,
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLikedCafesList(List<Cafe> likedCafes) {
+    return ListView.builder(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      itemCount: likedCafes.length,
+      itemBuilder: (context, index) {
+        final cafe = likedCafes[index];
+        return Dismissible(
+          key: Key(cafe.name),
+          direction: DismissDirection.endToStart,
+          background: Container(
+            margin: const EdgeInsets.only(bottom: 16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.red,
+            ),
+            alignment: Alignment.centerRight,
+            padding: const EdgeInsets.only(right: 20),
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.delete, color: Colors.white, size: 30),
+                SizedBox(height: 4),
+                Text(
+                  'Hapus',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          onDismissed: (direction) {
+            FavoriteManager.removeFromFavorites(cafe);
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('${cafe.name} dihapus dari favorit'),
+                duration: const Duration(seconds: 2),
+                action: SnackBarAction(
+                  label: 'Batal',
+                  onPressed: () {
+                    FavoriteManager.addToFavorites(cafe);
+                  },
+                ),
+              ),
+            );
+          },
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.1),
+                  spreadRadius: 1,
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
+            ),
+            child: Column(
+              children: [
+                // Cafe Image with Hero
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CafeDetailScreen(cafe: cafe),
                       ),
-                      
-                      // Gradient Overlay
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                              Colors.transparent,
-                              Colors.black.withOpacity(0.6),
-                            ],
-                          ),
-                        ),
+                    );
+                  },
+                  child: Hero(
+                    tag: 'cafe-image-${cafe.name}',
+                    child: ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(16),
                       ),
-                      
-                      // Package Info
-                      Positioned(
-                        bottom: 16,
-                        left: 16,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              title,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            if (location.isNotEmpty)
-                              Text(
-                                location,
-                                style: const TextStyle(
-                                  color: Colors.white70,
-                                  fontSize: 14,
+                      child: Container(
+                        height: 180,
+                        color: Colors.grey[200],
+                        child: cafe.imageAsset.isNotEmpty
+                            ? Image.asset(
+                                cafe.imageAsset,
+                                width: double.infinity,
+                                height: 180,
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    color: Colors.grey[300],
+                                    child: const Icon(
+                                      Icons.broken_image,
+                                      size: 40,
+                                      color: Colors.grey,
+                                    ),
+                                  );
+                                },
+                              )
+                            : Center(
+                                child: Icon(
+                                  Icons.local_cafe,
+                                  color: Colors.grey[600],
+                                  size: 50,
                                 ),
                               ),
-                          ],
-                        ),
                       ),
-                      
-                      // Favorite Button
-                      Positioned(
-                        bottom: 16,
-                        right: 16,
-                        child: Container(
-                          width: 40,
-                          height: 40,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                blurRadius: 4,
-                                offset: const Offset(0, 2),
+                    ),
+                  ),
+                ),
+
+                // Cafe Info
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              cafe.name,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              // TODO: Toggle favorite
-                            },
-                            icon: Icon(
-                              isFavorite ? Icons.favorite : Icons.favorite_border,
-                              color: isFavorite ? Colors.red : Colors.grey,
-                              size: 20,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
+                          // Like/Unlike Button
+                          GestureDetector(
+                            onTap: () => FavoriteManager.toggleFavorite(cafe),
+                            child: AnimatedContainer(
+                              duration: const Duration(milliseconds: 200),
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 12,
+                                vertical: 6,
+                              ),
+                              decoration: BoxDecoration(
+                                color: FavoriteManager.isFavorite(cafe)
+                                    ? Colors.red.withOpacity(0.1)
+                                    : Colors.grey.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: FavoriteManager.isFavorite(cafe)
+                                      ? Colors.red.withOpacity(0.3)
+                                      : Colors.grey.withOpacity(0.3),
+                                  width: 1,
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    FavoriteManager.isFavorite(cafe)
+                                        ? Icons.favorite
+                                        : Icons.favorite_border,
+                                    color: FavoriteManager.isFavorite(cafe)
+                                        ? Colors.red
+                                        : Colors.grey,
+                                    size: 16,
+                                  ),
+                                  const SizedBox(width: 4),
+                                  Text(
+                                    FavoriteManager.isFavorite(cafe)
+                                        ? 'Disukai'
+                                        : 'Sukai',
+                                    style: TextStyle(
+                                      color: FavoriteManager.isFavorite(cafe)
+                                          ? Colors.red
+                                          : Colors.grey,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          const Icon(
+                            Icons.location_on,
+                            color: Colors.grey,
+                            size: 16,
+                          ),
+                          const SizedBox(width: 4),
+                          Expanded(
+                            child: Text(
+                              cafe.location,
+                              style: const TextStyle(
+                                color: Colors.grey,
+                                fontSize: 13,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        cafe.jamOperasional,
+                        style: const TextStyle(
+                          color: Colors.black87,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
                         ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        cafe.description,
+                        style: const TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12,
+                          height: 1.4,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
     );
   }
 
-  Widget _buildBottomNavigationBar() {
-    return Container(
-      height: 80,
-      margin: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(25),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  Widget _buildEmptyFavoritesState() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 80.0),
+      child: Column(
         children: [
-          _buildNavItem(Icons.home, 'Home', true),
-          _buildNavItem(Icons.list_alt, 'Packages', false),
-          _buildNavItem(Icons.person, 'Profile', false),
+          Container(
+            width: 120,
+            height: 120,
+            decoration: BoxDecoration(
+              color: Colors.grey[100],
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(
+              Icons.favorite_border,
+              size: 48,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(height: 16),
+          const Text(
+            'Belum ada kafe favorit',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 8),
+          const Text(
+            'Tambahkan kafe ke favorit untuk melihatnya di sini.',
+            style: TextStyle(fontSize: 14, color: Colors.grey),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                (route) => false,
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF6B5CE6),
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            child: const Text('Jelajahi Kafe'),
+          ),
         ],
       ),
-    );
-  }
-
-  Widget _buildNavItem(IconData icon, String label, bool isActive) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          color: isActive ? const Color(0xFFFF6B35) : Colors.white,
-          size: 24,
-        ),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: TextStyle(
-            color: isActive ? const Color(0xFFFF6B35) : Colors.white,
-            fontSize: 12,
-          ),
-        ),
-      ],
     );
   }
 }

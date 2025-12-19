@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:aplikasi_cafe/screens/dashboard_screen.dart';
+import 'package:aplikasi_cafe/screens/home_screen.dart';
 
 class InitializationScreen extends StatelessWidget {
   const InitializationScreen({super.key});
@@ -12,10 +12,7 @@ class InitializationScreen extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [
-              Color(0xFF4A90E2),
-              Color(0xFF357ABD),
-            ],
+            colors: [Color(0xFF4A90E2), Color(0xFF357ABD)],
           ),
         ),
         child: SafeArea(
@@ -31,7 +28,7 @@ class InitializationScreen extends StatelessWidget {
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const DashboardScreen(),
+                          builder: (context) => const HomeScreen(),
                         ),
                       );
                     },
@@ -45,7 +42,7 @@ class InitializationScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+
                 // Main Content
                 Expanded(
                   child: Column(
@@ -82,9 +79,9 @@ class InitializationScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      
+
                       const SizedBox(height: 40),
-                      
+
                       // Welcome Text
                       const Text(
                         'Welcome to D\' Cafe',
@@ -95,9 +92,9 @@ class InitializationScreen extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      
+
                       const SizedBox(height: 16),
-                      
+
                       // Subtitle
                       const Text(
                         'Your favorite cafe management app\nmade simple and efficient',
@@ -108,9 +105,9 @@ class InitializationScreen extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      
+
                       const SizedBox(height: 40),
-                      
+
                       // Get Started Button
                       Container(
                         width: double.infinity,
@@ -146,9 +143,9 @@ class InitializationScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      
+
                       const SizedBox(height: 20),
-                      
+
                       // Login and Sign Up Buttons Row
                       Row(
                         children: [
@@ -225,7 +222,7 @@ class InitializationScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                
+
                 // Bottom Navigation Dots
                 const SizedBox(height: 40),
                 Row(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:aplikasi_cafe/screens/initialization_screen.dart';
+import 'package:aplikasi_cafe/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.light,
         ),
       ),
-      home: const InitializationScreen(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
