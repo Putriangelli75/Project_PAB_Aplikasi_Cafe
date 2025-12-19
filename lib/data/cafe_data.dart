@@ -75,7 +75,10 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/nako/nako.jpg',
-
+      'images/nako/view1.jpg',
+      'images/nako/view2.jpg',
+      'images/nako/view3.jpg',
+      'images/nako/view4.jpg',
     ],
     name: 'Cafe Nako',
     location: 'Jl. Demang Lebar Daun, Kecamatan Ilir Barat I, Kota Palembang',
@@ -89,7 +92,10 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/sanjo/sanjo.jpg',
-      
+      'images/sanjo/view1.jpg',
+      'images/nako/view2.jpg',
+      'images/nako/view3.jpg',
+      'images/nako/view4.jpg',
     ],
     name: 'Cafe Sanjo',
     location:
@@ -102,7 +108,9 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/nagara/nagara.jpg'],
+    headerPhotos: [
+      'images/nagara/nagara.jpg',
+    ],
     name: 'Cafe Nagara',
     location: 'Jl. Letjen Harun Sohar, Palembang, Sumatera Selatan',
     description:
@@ -113,7 +121,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/soree/soree.jpg'],
+    headerPhotos: [
+      'images/soree/soree.jpg',
+      'images/soree/view1.jpg',
+      'images/soree/view2.jpg',
+      'images/soree/view3.jpg',
+      'images/soree/view4.jpg',
+    ],
     name: 'Cafe Soree',
     location:
         'Jl. Veteran No. 531, 20 Ilir D. I., Palembang, Sumatera Selatan 30114',
@@ -125,7 +139,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/taki/taki.jpg'],
+    headerPhotos: [
+      'images/taki/taki.jpg',
+      'images/taki/view1.jpg',
+      'images/taki/view2.jpg',
+      'images/taki/view3.jpg',
+      'images/taki/view4.jpg',
+    ],
     name: 'Cafe Taki',
     location:
         'Jl. Taman Kenten, 8 Ilir – Palembang (sebelah Quattro Mini Soccer)',
@@ -137,7 +157,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/cce-space/cce_space.jpg'],
+    headerPhotos: [
+      'images/cce-space/cce_space.jpg'
+      'images/cce-space/view1.jpg',
+      'images/cce-space/view2.jpg',
+      'images/cce-space/view3.jpg',
+      'images/cce-space/view4.jpg',
+    ],
     name: 'Cafe CCE Space',
     location:
         ' Jl. Taman Kenten, 8 Ilir, Kec. Ilir Tim. II, Kota Palembang, Sumatera Selatan',
@@ -149,7 +175,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/dayone/dayone.jpg'],
+    headerPhotos: [
+      'images/dayone/dayone.jpg',
+      'images/dayone/view1.jpg',
+      'images/dayone/view2.jpg',
+      'images/dayone/view3.jpg',
+      'images/dayone/view4.jpg',
+    ],
     name: 'Cafe DayOne',
     location: 'Jl. Letkol Iskandar, Palembang, Sumatera Selatan',
     description:
@@ -160,7 +192,9 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/days-cafe/days-cafe.jpg'],
+    headerPhotos: [
+      'images/days-cafe/days-cafe.jpg',
+    ],
     name: 'Days Cafe',
     location: 'Jl. Dr. M. Isa III, Palembang, Sumatera Selatan',
     description:
@@ -171,7 +205,9 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/eightynine/eightynine.jpg'],
+    headerPhotos: [
+      'images/eightynine/eightynine.jpg',
+    ],
     name: 'Cafe Eightynine',
     location: 'Jl. Rajawali, Palembang, Sumatera Selatan',
     description:
@@ -182,7 +218,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/enamdua/enamdua.jpg'],
+    headerPhotos: [
+      'images/enamdua/enamdua.jpg',
+      'images/enamdua/view1.jpg',
+      'images/enamdua/view2.jpg',
+      'images/enamdua/view3.jpg',
+      'images/enamdua/view4.jpg',
+    ],
     name: 'Cafe Enamdua',
     location: 'Jl. Angkatan 45, Palembang, Sumatera Selatan',
     description:
@@ -193,7 +235,10 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/kopi-dari-hati/kopi-dari-hati.jpg'],
+    headerPhotos: [
+      'images/kopi-dari-hati/kopi-dari-hati.jpg',
+      'images/'
+    ],
     name: 'Cafe Kopi dari hati',
     location: 'Jl. Kolonel Atmo, Palembang, Sumatera Selatan',
     description:
@@ -204,7 +249,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/luthier/luthier.jpg'],
+    headerPhotos: [
+      'images/luthier/luthier.jpg',
+      'images/luthier/view1.jpg',
+      'images/luthier/view2.jpg',
+      'images/luthier/view3.jpg',
+      'images/luthier/view4.jpg',
+    ],
     name: 'Cafe Luthier',
     location: 'Jl. Bangau No. 170C, Palembang, Sumatera Selatan',
     description:
@@ -215,7 +266,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/york-cafe/york-cafe.jpg'],
+    headerPhotos: [
+      'images/york-cafe/york-cafe.jpg',
+      'images/york-cafe/view1.jpg',
+      'images/york-cafe/view2.jpg',
+      'images/york-cafe/view3.jpg',
+      'images/york-cafe/view4.jpg',
+    ],
     name: 'Cafe York',  
     location: 'Jl. Radial, Palembang, Sumatera Selatan',
     description:
