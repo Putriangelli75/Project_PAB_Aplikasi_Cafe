@@ -93,9 +93,9 @@ var cafeList = [
     headerPhotos: [
       'images/sanjo/sanjo.jpg',
       'images/sanjo/view1.jpg',
-      'images/nako/view2.jpg',
-      'images/nako/view3.jpg',
-      'images/nako/view4.jpg',
+      'images/sanjo/view2.jpg',
+      'images/sanjo/view3.jpg',
+      'images/sanjo/view4.jpg',
     ],
     name: 'Cafe Sanjo',
     location:
