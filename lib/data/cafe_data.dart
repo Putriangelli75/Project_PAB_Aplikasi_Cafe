@@ -5,9 +5,9 @@ var cafeList = [
     headerPhotos: [
       'images/nostalgia/nostalgia.jpg',
       'images/nostalgia/view1.jpg',
-      'images/nostalgia/menu.jpg',
-      '',
-      '',
+      'images/nostalgia/view2.jpg',
+      'images/nostalgia/view3.jpg',
+      'images/nostalgia/view4.jpg',
     ],
     name: 'Cafe Nostalgia',
     location: 'Jl. Bangau, 9 Ilir, Ilir Timur II, Kota Palembang',
@@ -21,8 +21,11 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/koat/koat.jpg',
-      
-      ],
+      'images/koat/view1.jpg',
+      'images/koat/view2.jpg',
+      'images/koat/view3.jpg',
+      'images/koat/view4.jpg',
+    ],
     name: 'Cafe Koat',
     location:
         'Jl. Angkatan 45, Lorok Pakjo, Kec. Ilir Barat I, Kota Palembang, Sumatera Selatan, Indonesia',
@@ -34,7 +37,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/for-good-luck/for_good_luck.jpg'],
+    headerPhotos: [
+      'images/for-good-luck/for_good_luck.jpg',
+      'images/for-good-luck/view1.jpg',
+      'images/for-good-luck/view2.jpg',
+      'images/for-good-luck/view3.jpg',
+      'images/for-good-luck/view4.jpg',
+    ],
     name: 'Cafe For Good Luck',
     location:
         'Jl. Sri Gunting, 9 Ilir, Kec. Ilir Tim. II, Kota Palembang 30113',
@@ -46,7 +55,13 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/loer/loer.jpg'],
+    headerPhotos: [
+      'images/loer/loer.jpg',
+      'images/loer/view1.jpg',
+      'images/loer/view2.jpg',
+      'images/loer/view3.jpg',
+      'images/loer/view4.jpg',
+    ],
     name: 'Cafe Loer',
     location: 'Jl. Kapten A. Rivai, Jl. MP Mangkunegara No. 6B',
     description:
@@ -58,7 +73,10 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/nako/nako.jpg'],
+    headerPhotos: [
+      'images/nako/nako.jpg',
+
+    ],
     name: 'Cafe Nako',
     location: 'Jl. Demang Lebar Daun, Kecamatan Ilir Barat I, Kota Palembang',
     description:
@@ -69,7 +87,10 @@ var cafeList = [
     isFavorite: false,
   ),
   Cafe(
-    headerPhotos: ['images/sanjo/sanjo.jpg'],
+    headerPhotos: [
+      'images/sanjo/sanjo.jpg',
+      
+    ],
     name: 'Cafe Sanjo',
     location:
         'Jl. Diponegoro No. 22, Talang Semut, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan',
