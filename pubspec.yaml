@@ -1,5 +1,5 @@
 name: aplikasi_cafe
-description: "A new Flutter project."
+description: "Aplikasi kafe dibuat dengan menggunakan flutter."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -34,6 +34,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  shared_preferences: ^2.2.3
+  image_picker: ^1.0.7
 
 dev_dependencies:
   flutter_test:
@@ -59,24 +61,8 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    # Cafe Images
-    - images/cce-space/cce_space.jpg
-    - images/dayone/dayone.jpg
-    - images/days-cafe/days-cafe.jpg
-    - images/eightynine/eightynine.jpg
-    - images/enamdua/enamdua.jpg
-    - images/for-good-luck/for_good_luck.jpg
-    - images/koat/koat.jpg
-    - images/kopi-dari-hati/kopi-dari-hati.jpg
-    - images/loer/loer.jpg
-    - images/luthier/luthier.jpg
-    - images/nagara/nagara.jpg
-    - images/nako/nako.jpg
-    - images/nostalgia/nostalgia.jpg
-    - images/sanjo/sanjo.jpg
-    - images/soree/soree.jpg
-    - images/taki/taki.jpg
-    - images/york-cafe/york-cafe.jpg
+    - assets/images/
+    - images/
     
     # Add placeholder image (if you plan to add one later)
     # - images/placeholder.jpg

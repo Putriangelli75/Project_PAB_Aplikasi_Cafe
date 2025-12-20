@@ -25,9 +25,7 @@ class FavoriteScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     _buildSearchBar(),
                     const SizedBox(height: 24),
-                    cafes.isEmpty
-                        ? _buildEmptyState()
-                        : _buildCafeCards(cafes),
+                    cafes.isEmpty ? _buildEmptyState() : _buildCafeCards(cafes),
                   ],
                 ),
               ),
@@ -48,14 +46,10 @@ class FavoriteScreen extends StatelessWidget {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: const Color(0xFF6B5CE6),
+              color: const Color(0xFF7b3f00),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: const Icon(
-              Icons.local_cafe,
-              color: Colors.white,
-              size: 24,
-            ),
+            child: const Icon(Icons.local_cafe, color: Colors.white, size: 24),
           ),
           const Text(
             'Katalog Kafe',
@@ -110,10 +104,7 @@ class FavoriteScreen extends StatelessWidget {
         ),
         Text(
           '$total kafe',
-          style: const TextStyle(
-            color: Colors.grey,
-            fontSize: 14,
-          ),
+          style: const TextStyle(color: Colors.grey, fontSize: 14),
         ),
       ],
     );
@@ -312,10 +303,7 @@ class FavoriteScreen extends StatelessWidget {
           const SizedBox(height: 8),
           const Text(
             'Tambahkan kafe ke favorit untuk melihatnya di sini.',
-            style: TextStyle(
-              fontSize: 14,
-              color: Colors.grey,
-            ),
+            style: TextStyle(fontSize: 14, color: Colors.grey),
             textAlign: TextAlign.center,
           ),
         ],

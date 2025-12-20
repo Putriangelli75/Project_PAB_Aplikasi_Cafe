@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:aplikasi_cafe/screens/home_screen.dart';
+import 'package:aplikasi_cafe/auth/signin_screen.dart';
+import 'package:aplikasi_cafe/auth/signup_screen.dart';
 
 class InitializationScreen extends StatelessWidget {
   const InitializationScreen({super.key});
@@ -290,22 +292,14 @@ class InitializationScreen extends StatelessWidget {
   }
 
   void _navigateToLogin(BuildContext context) {
-    // TODO: Navigate to login screen
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Login screen coming soon!'),
-        duration: Duration(seconds: 2),
-      ),
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => const SignInScreen()),
     );
   }
 
   void _navigateToSignUp(BuildContext context) {
-    // TODO: Navigate to sign up screen
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Sign up screen coming soon!'),
-        duration: Duration(seconds: 2),
-      ),
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => const SignUpScreen()),
     );
   }
 }

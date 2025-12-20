@@ -12,9 +12,38 @@ class FavoriteScreen extends StatefulWidget {
 }
 
 class _FavoriteScreenState extends State<FavoriteScreen> {
+  final TextEditingController _searchController = TextEditingController();
+  List<Cafe> _filteredFavorites = [];
+
   @override
   void initState() {
     super.initState();
+    _searchController.addListener(_onSearchChanged);
+  }
+
+  @override
+  void dispose() {
+    _searchController.removeListener(_onSearchChanged);
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _onSearchChanged() {
+    setState(() {
+      final allFavorites = FavoriteManager.favoriteCafes;
+      if (_searchController.text.isEmpty) {
+        _filteredFavorites = allFavorites;
+      } else {
+        _filteredFavorites = allFavorites.where((cafe) {
+          return cafe.name.toLowerCase().contains(
+                _searchController.text.toLowerCase(),
+              ) ||
+              cafe.location.toLowerCase().contains(
+                _searchController.text.toLowerCase(),
+              );
+        }).toList();
+      }
+    });
   }
 
   @override
@@ -25,6 +54,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         child: Column(
           children: [
             _buildHeader(),
+            const SizedBox(height: 16),
+            _buildSearchBar(),
+            const SizedBox(height: 16),
             Expanded(
               child: StreamBuilder(
                 stream: Stream.periodic(
@@ -32,10 +64,12 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   (_) {},
                 ),
                 builder: (context, snapshot) {
-                  final likedCafes = FavoriteManager.favoriteCafes;
-                  return likedCafes.isEmpty
+                  final displayFavorites = _searchController.text.isEmpty
+                      ? FavoriteManager.favoriteCafes
+                      : _filteredFavorites;
+                  return displayFavorites.isEmpty
                       ? _buildEmptyFavoritesState()
-                      : _buildLikedCafesList(likedCafes);
+                      : _buildLikedCafesList(displayFavorites);
                 },
               ),
             ),
@@ -55,13 +89,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
             width: 40,
             height: 40,
             decoration: BoxDecoration(
-              color: const Color(0xFF6B5CE6),
+              color: const Color(0xFF7b3f00),
               borderRadius: BorderRadius.circular(8),
             ),
             child: const Icon(Icons.favorite, color: Colors.white, size: 24),
           ),
           const Text(
-            'Kafe Favorit',
+            'Cafe Favorit',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w700,
@@ -95,6 +129,28 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildSearchBar() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      child: Container(
+        height: 50,
+        decoration: BoxDecoration(
+          color: Colors.grey[100],
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: TextField(
+          controller: _searchController,
+          decoration: const InputDecoration(
+            hintText: 'Cari cafe favorit...',
+            prefixIcon: Icon(Icons.search, color: Colors.grey),
+            border: InputBorder.none,
+            contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          ),
+        ),
       ),
     );
   }
@@ -359,7 +415,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           ),
           const SizedBox(height: 16),
           const Text(
-            'Belum ada kafe favorit',
+            'Belum ada cafe favorit',
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w600,
@@ -368,7 +424,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           ),
           const SizedBox(height: 8),
           const Text(
-            'Tambahkan kafe ke favorit untuk melihatnya di sini.',
+            'Tambahkan cafe ke favorit untuk melihatnya di sini.',
             style: TextStyle(fontSize: 14, color: Colors.grey),
             textAlign: TextAlign.center,
           ),
@@ -382,14 +438,14 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               );
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF6B5CE6),
+              backgroundColor: const Color(0xFF7b3f00),
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            child: const Text('Jelajahi Kafe'),
+            child: const Text('Jelajahi Cafe'),
           ),
         ],
       ),

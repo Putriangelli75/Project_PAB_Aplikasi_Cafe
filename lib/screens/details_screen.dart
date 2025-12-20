@@ -14,11 +14,27 @@ class CafeDetailScreen extends StatefulWidget {
 class _CafeDetailScreenState extends State<CafeDetailScreen> {
   bool isLiked = false;
   bool isProcessing = false;
+  PageController _pageController = PageController(viewportFraction: 0.8);
+  int _currentPage = 0;
 
   @override
   void initState() {
     super.initState();
     isLiked = FavoriteManager.isFavorite(widget.cafe);
+    _pageController.addListener(() {
+      int page = _pageController.page?.round() ?? 0;
+      if (_currentPage != page) {
+        setState(() {
+          _currentPage = page;
+        });
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -35,44 +51,64 @@ class _CafeDetailScreenState extends State<CafeDetailScreen> {
             leading: Container(
               margin: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.9),
+                color: const Color(0xFF7b3f00).withOpacity(0.1),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: IconButton(
-                icon: const Icon(Icons.arrow_back, color: Colors.black),
+                icon: const Icon(Icons.arrow_back, color: Color(0xFF7b3f00)),
                 onPressed: () => Navigator.pop(context),
               ),
             ),
             flexibleSpace: FlexibleSpaceBar(
-              background: Hero(
-                tag: 'cafe-image-${widget.cafe.name}',
-                child: Container(
-                  color: Colors.grey[200],
-                  child: widget.cafe.imageAsset.isNotEmpty
-                      ? Image.asset(
-                          widget.cafe.imageAsset,
-                          width: double.infinity,
-                          height: 300,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                              color: Colors.grey[300],
-                              child: const Icon(
-                                Icons.broken_image,
-                                size: 60,
-                                color: Colors.grey,
-                              ),
-                            );
-                          },
-                        )
-                      : Center(
-                          child: Icon(
-                            Icons.local_cafe,
-                            color: Colors.grey[600],
-                            size: 80,
+              background: PageView.builder(
+                controller: _pageController,
+                itemCount: widget.cafe.headerPhotos.length,
+                itemBuilder: (context, index) {
+                  return AnimatedBuilder(
+                    animation: _pageController,
+                    builder: (context, child) {
+                      double value = 1.0;
+                      if (_pageController.position.haveDimensions) {
+                        value = index.toDouble() - (_pageController.page ?? 0);
+                        value = (1 - (value.abs() * 0.3)).clamp(0.8, 1.0);
+                      }
+
+                      return Transform.scale(
+                        scale: value,
+                        child: Hero(
+                          tag: 'cafe-image-${widget.cafe.name}-$index',
+                          child: Container(
+                            color: Colors.grey[200],
+                            child: widget.cafe.headerPhotos[index].isNotEmpty
+                                ? Image.asset(
+                                    widget.cafe.headerPhotos[index],
+                                    width: double.infinity,
+                                    height: 300,
+                                    fit: BoxFit.cover,
+                                    errorBuilder: (context, error, stackTrace) {
+                                      return Container(
+                                        color: Colors.grey[300],
+                                        child: const Icon(
+                                          Icons.broken_image,
+                                          size: 60,
+                                          color: Colors.grey,
+                                        ),
+                                      );
+                                    },
+                                  )
+                                : Center(
+                                    child: Icon(
+                                      Icons.local_cafe,
+                                      color: Colors.grey[600],
+                                      size: 80,
+                                    ),
+                                  ),
                           ),
                         ),
-                ),
+                      );
+                    },
+                  );
+                },
               ),
             ),
           ),
@@ -206,12 +242,12 @@ class _CafeDetailScreenState extends State<CafeDetailScreen> {
                       Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                          color: const Color(0xFF6B5CE6).withOpacity(0.1),
+                          color: const Color(0xFF7b3f00).withOpacity(0.1),
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: const Icon(
                           Icons.location_on,
-                          color: Color(0xFF6B5CE6),
+                          color: Color(0xFF7b3f00),
                           size: 20,
                         ),
                       ),
@@ -262,9 +298,32 @@ class _CafeDetailScreenState extends State<CafeDetailScreen> {
 
                   const SizedBox(height: 24),
 
+                  // Page Indicators
+                  if (widget.cafe.headerPhotos.length > 1)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(
+                        widget.cafe.headerPhotos.length,
+                        (index) => AnimatedContainer(
+                          duration: const Duration(milliseconds: 300),
+                          margin: const EdgeInsets.symmetric(horizontal: 4),
+                          width: _currentPage == index ? 12 : 8,
+                          height: 8,
+                          decoration: BoxDecoration(
+                            color: _currentPage == index
+                                ? const Color(0xFF7b3f00)
+                                : Colors.grey.withOpacity(0.5),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                  const SizedBox(height: 24),
+
                   // Description Section
                   const Text(
-                    'Tentang Kafe',
+                    'Tentang Cafe',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -284,63 +343,6 @@ class _CafeDetailScreenState extends State<CafeDetailScreen> {
 
                   const SizedBox(height: 32),
                   const SizedBox(height: 32),
-
-                  // Additional Photos Section
-                  if (widget.cafe.headerPhotos.isNotEmpty &&
-                      widget.cafe.headerPhotos.first.isNotEmpty) ...[
-                    const Text(
-                      'Foto Lainnya',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const SizedBox(height: 12),
-                    SizedBox(
-                      height: 100,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: widget.cafe.headerPhotos.length,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            width: 120,
-                            height: 100,
-                            margin: const EdgeInsets.only(right: 12),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: Colors.grey[200],
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(12),
-                              child: widget.cafe.headerPhotos[index].isNotEmpty
-                                  ? Image.asset(
-                                      widget.cafe.headerPhotos[index],
-                                      fit: BoxFit.cover,
-                                      errorBuilder:
-                                          (context, error, stackTrace) {
-                                            return Container(
-                                              color: Colors.grey[300],
-                                              child: const Icon(
-                                                Icons.broken_image,
-                                                size: 30,
-                                                color: Colors.grey,
-                                              ),
-                                            );
-                                          },
-                                    )
-                                  : const Icon(
-                                      Icons.local_cafe,
-                                      color: Colors.grey,
-                                      size: 40,
-                                    ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                    const SizedBox(height: 32),
-                  ],
                 ],
               ),
             ),

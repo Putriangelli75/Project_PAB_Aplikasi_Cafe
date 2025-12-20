@@ -27,7 +27,8 @@ var cafeList = [
       'images/koat/view4.jpg',
     ],
     name: 'Cafe Koat',
-    location: 'Jl. Angkatan 45, Lorok Pakjo, Kec. Ilir Barat I, Kota Palembang, Sumatera Selatan, Indonesia',
+    location:
+        'Jl. Angkatan 45, Lorok Pakjo, Kec. Ilir Barat I, Kota Palembang, Sumatera Selatan, Indonesia',
     description:
         'Koat Coffee adalah café modern dengan desain minimalis yang menghadirkan pengalaman ngopi dengan pemandangan menarik di sekitar jalur LRT Palembang. Walau data jam buka belum pasti, café ini biasanya beroperasi dari pagi hingga malam hari. Menu-menu kopinya menggunakan biji pilihan lokal yang diracik secara profesional. Suasananya nyaman dengan pencahayaan lembut dan area kerja yang tenang, cocok untuk produktivitas. Koat Coffee juga sering mengadakan acara musik akustik dan pameran seni kecil. Tempat ini semakin dikenal di kalangan pecinta kopi muda karena perpaduan konsep urban dan atmosfer rileks yang menenangkan',
     jamOperasional: 'buka 24 jam',
@@ -44,7 +45,8 @@ var cafeList = [
       'images/for-good-luck/view4.jpg',
     ],
     name: 'Cafe For Good Luck',
-    location: 'Jl. Sri Gunting, 9 Ilir, Kec. Ilir Tim. II, Kota Palembang 30113',
+    location:
+        'Jl. Sri Gunting, 9 Ilir, Kec. Ilir Tim. II, Kota Palembang 30113',
     description:
         'For Good Luck atau FGL Café yang berlokasi di Jalan Sri Gunting, Palembang, menghadirkan suasana cerah dan ramah keluarga. Tempat ini terkenal dengan area luas, desain interior estetik, serta fasilitas ramah anak seperti area bermain kecil. FGL menjadi tempat ideal untuk sarapan, brunch, atau ngopi sore karena buka mulai 07.00 hingga 23.00 WIB. Menu andalannya berupa kopi artisan, pasta, dan dessert kekinian. Pengunjung menyukai ambience hangat dan pelayanan yang cepat. Dengan konsep “family-friendly coffee space”, FGL berhasil menjadi salah satu café populer di Palembang yang cocok untuk semua kalangan dan suasana.',
     jamOperasional: 'buka dari pukul 07.00 – 23.00 setiap hari.',
@@ -70,6 +72,7 @@ var cafeList = [
     imageUrls: ['images/loer/loer.jpg'],
     isFavorite: false,
   ),
+
   Cafe(
     headerPhotos: [
       'images/nako/nako.jpg',
@@ -87,6 +90,7 @@ var cafeList = [
     imageUrls: ['images/nako/nako.jpg'],
     isFavorite: false,
   ),
+
   Cafe(
     headerPhotos: [
       'images/sanjo/sanjo.jpg',
@@ -96,7 +100,8 @@ var cafeList = [
       'images/sanjo/view4.jpg',
     ],
     name: 'Cafe Sanjo',
-    location: 'Jl. Diponegoro No. 22, Talang Semut, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan',
+    location:
+        'Jl. Diponegoro No. 22, Talang Semut, Kec. Bukit Kecil, Kota Palembang, Sumatera Selatan',
     description:
         'Café Sanjo dikenal dengan suasana industrial minimalis di kawasan Talang Semut. Menu andalannya kopi susu Sanjo, variasi mocktail, serta pilihan makanan berat yang cocok untuk makan siang atau dinner santai. Area indoor ber-AC dan outdoor kecil membuatnya nyaman untuk kerja santai maupun nongkrong.',
     jamOperasional: 'setiap hari mulai pukul 10.00 hingga sekitar 23.00',
@@ -110,7 +115,6 @@ var cafeList = [
       'images/nagara/view1.jpg',
       'images/nagara/view2.jpg',
       'images/nagara/view3.jpg',
-      'images/nagara/view4.jpg',
     ],
     name: 'Cafe Nagara',
     location: 'Jl. Letjen Harun Sohar, Palembang, Sumatera Selatan',
@@ -130,7 +134,8 @@ var cafeList = [
       'images/soree/view4.jpg',
     ],
     name: 'Cafe Soree',
-    location: 'Jl. Veteran No. 531, 20 Ilir D. I., Palembang, Sumatera Selatan 30114',
+    location:
+        'Jl. Veteran No. 531, 20 Ilir D. I., Palembang, Sumatera Selatan 30114',
     description:
         'Soree Café yang beralamat di Jalan Veteran No.176, Palembang, dikenal sebagai tempat nongkrong estetik dengan dua lantai berdesain modern elegan. Setiap sudutnya fotogenik, menjadikannya spot favorit untuk foto maupun bersantai. Soree menyajikan hidangan fusion Asia dan Barat dengan cita rasa khas, serta kopi premium yang disukai pengunjung. Dengan kisaran harga menengah, café ini ramai dikunjungi kalangan muda dan profesional muda. Jam buka 10.00 hingga 23.00 WIB, cocok untuk lunch meeting atau dinner santai. Suasana hangat, pelayanan ramah, serta musik lembut menjadikan Soree salah satu destinasi kopi terbaik di Palembang',
     jamOperasional: 'buka pukul 10.00-23.00 WIB',
@@ -147,7 +152,8 @@ var cafeList = [
       'images/taki/view4.jpg',
     ],
     name: 'Cafe Taki',
-    location: 'Jl. Taman Kenten, 8 Ilir – Palembang (sebelah Quattro Mini Soccer)',
+    location:
+        'Jl. Taman Kenten, 8 Ilir – Palembang (sebelah Quattro Mini Soccer)',
     description:
         'Taki Coffee & Eatery terletak di Jalan Taman Kenten, Palembang, tepat di samping Quattro Mini Soccer. Café ini memiliki konsep muda dan energik, dengan dekorasi modern serta area outdoor luas yang sering menjadi tempat nongkrong malam. Jam operasionalnya panjang, yakni 11.00 siang hingga 03.00 pagi, menjadikannya pilihan pas untuk anak muda yang suka nongkrong larut malam. Menu utamanya beragam kopi, minuman non-kafein, serta makanan western dan lokal. Musik dan suasana hangatnya membuat Taki selalu ramai, terutama di akhir pekan. Tempat ini sering menjadi lokasi kumpul komunitas kreatif dan musik akustik',
     jamOperasional: 'buka 11.00-03.00 pagi',
@@ -158,13 +164,14 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/cce-space/cce_space.jpg'
-      'images/cce-space/view1.jpg',
+          'images/cce-space/view1.jpg',
       'images/cce-space/view2.jpg',
       'images/cce-space/view3.jpg',
       'images/cce-space/view4.jpg',
     ],
     name: 'Cafe CCE Space',
-    location: ' Jl. Taman Kenten, 8 Ilir, Kec. Ilir Tim. II, Kota Palembang, Sumatera Selatan',
+    location:
+        ' Jl. Taman Kenten, 8 Ilir, Kec. Ilir Tim. II, Kota Palembang, Sumatera Selatan',
     description:
         'CCE Space terletak di Jalan Taman Kenten, Palembang, dikenal sebagai café dengan konsep modern dan ruang terbuka yang luas. Tempat ini menjadi pilihan favorit mahasiswa dan pekerja karena buka 24 jam setiap hari, cocok untuk nongkrong malam atau mengerjakan tugas hingga larut. Interiornya mengusung gaya industrial minimalis dengan pencahayaan hangat yang nyaman. Menu yang ditawarkan bervariasi, mulai dari kopi, teh, hingga makanan ringan dan berat. Suasana malamnya hidup namun tetap tenang, menjadikan CCE Space salah satu spot nongkrong paling fleksibel di Palembang bagi siapa pun yang mencari tempat produktif sekaligus santai',
     jamOperasional: 'buka 24 jam setiap hari',
@@ -282,7 +289,7 @@ var cafeList = [
       'images/york-cafe/view3.jpg',
       'images/york-cafe/view4.jpg',
     ],
-    name: 'Cafe York',  
+    name: 'Cafe York',
     location: 'Jl. Radial, Palembang, Sumatera Selatan',
     description:
         'York Cafe mengusung konsep industrial modern dengan interior stylish. Menu kopi lengkap, dari espresso hingga signature drinks, dilengkapi makanan ringan. Cafe ini cocok untuk bekerja, meeting, atau nongkrong bersama teman. Suasana nyaman dengan pencahayaan hangat mendukung pengalaman bersantai. Area indoor dan semi-outdoor tersedia untuk fleksibilitas',

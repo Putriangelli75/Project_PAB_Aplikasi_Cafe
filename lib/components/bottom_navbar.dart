@@ -16,10 +16,10 @@ class CustomBottomNavigationBar extends StatelessWidget {
       currentIndex: currentIndex,
       onTap: onTap,
       type: BottomNavigationBarType.fixed,
-      selectedItemColor: const Color(0xFF6B5CE6),
+      selectedItemColor: const Color(0xFF7b3f00),
       unselectedItemColor: Colors.grey,
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Kafe'),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Cafe'),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite_border),
           label: 'Favorites',
