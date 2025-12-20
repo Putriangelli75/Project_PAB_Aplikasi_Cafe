@@ -107,6 +107,10 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/nagara/nagara.jpg',
+      'images/nagara/view1.jpg',
+      'images/nagara/view2.jpg',
+      'images/nagara/view3.jpg',
+      'images/nagara/view4.jpg',
     ],
     name: 'Cafe Nagara',
     location: 'Jl. Letjen Harun Sohar, Palembang, Sumatera Selatan',
@@ -188,6 +192,10 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/days-cafe/days-cafe.jpg',
+      'images/days-cafe/view1.jpg',
+      'images/days-cafe/view2.jpg',
+      'images/days-cafe/view3.jpg',
+      'images/days-cafe/view4.jpg',
     ],
     name: 'Days Cafe',
     location: 'Jl. Dr. M. Isa III, Palembang, Sumatera Selatan',
@@ -201,6 +209,10 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/eightynine/eightynine.jpg',
+      'images/eightynine/view1.jpg',
+      'images/eightynine/view2.jpg',
+      'images/eightynine/view3.jpg',
+      'images/eightynine/view4.jpg',
     ],
     name: 'Cafe Eightynine',
     location: 'Jl. Rajawali, Palembang, Sumatera Selatan',
@@ -231,7 +243,10 @@ var cafeList = [
   Cafe(
     headerPhotos: [
       'images/kopi-dari-hati/kopi-dari-hati.jpg',
-      'images/'
+      'images/kopi-dari-hati/view1.jpg',
+      'images/kopi-dari-hati/view2.jpg',
+      'images/kopi-dari-hati/view3.jpg',
+      'images/kopi-dari-hati/view4.jpg',
     ],
     name: 'Cafe Kopi dari hati',
     location: 'Jl. Kolonel Atmo, Palembang, Sumatera Selatan',
