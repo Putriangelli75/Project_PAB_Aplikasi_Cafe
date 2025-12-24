@@ -6,6 +6,7 @@ class AuthService {
   static const String _isFirstTimeKey = 'is_first_time';
   static const String _currentUserEmailKey = 'current_user_email';
   static const String _usersKey = 'users_data';
+  static const String _profileImagesKey = 'profile_images';
 
   // Initialize dummy users data
   static Future<void> initializeDummyUsers() async {
@@ -152,6 +153,44 @@ class AuthService {
   static Future<String> getUserName() async {
     final currentUser = await getCurrentUser();
     return currentUser?['name'] ?? 'User';
+  }
+
+  // Get stored profile image path for a user
+  static Future<String?> getProfileImagePath(String email) async {
+    final prefs = await SharedPreferences.getInstance();
+    final imagesData = prefs.getString(_profileImagesKey);
+    if (imagesData == null) return null;
+
+    final Map<String, dynamic> imagesMap = jsonDecode(imagesData);
+    return imagesMap[email] as String?;
+  }
+
+  // Save profile image path for a user
+  static Future<void> setProfileImagePath(
+    String email,
+    String imagePath,
+  ) async {
+    final prefs = await SharedPreferences.getInstance();
+    final imagesData = prefs.getString(_profileImagesKey);
+    Map<String, dynamic> imagesMap = {};
+
+    if (imagesData != null) {
+      imagesMap = jsonDecode(imagesData);
+    }
+
+    imagesMap[email] = imagePath;
+    await prefs.setString(_profileImagesKey, jsonEncode(imagesMap));
+  }
+
+  // Remove stored profile image path for a user (optional helper)
+  static Future<void> removeProfileImagePath(String email) async {
+    final prefs = await SharedPreferences.getInstance();
+    final imagesData = prefs.getString(_profileImagesKey);
+    if (imagesData == null) return;
+
+    final Map<String, dynamic> imagesMap = jsonDecode(imagesData);
+    imagesMap.remove(email);
+    await prefs.setString(_profileImagesKey, jsonEncode(imagesMap));
   }
 
   // Logout user

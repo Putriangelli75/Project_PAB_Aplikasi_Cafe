@@ -25,8 +25,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   Future<void> _loadUserData() async {
     final userData = await AuthService.getCurrentUser();
+    String? storedImagePath;
+
+    // Load previously saved profile image (if any)
+    if (userData?['email'] != null && userData!['email']!.isNotEmpty) {
+      storedImagePath = await AuthService.getProfileImagePath(
+        userData['email']!,
+      );
+    }
+
     setState(() {
       _currentUser = userData;
+      _profileImagePath = storedImagePath;
       _isLoading = false;
     });
   }
@@ -41,9 +51,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
       );
 
       if (pickedFile != null) {
+        final email = _currentUser?['email'] ?? await AuthService.getUserEmail();
+
         setState(() {
           _profileImagePath = pickedFile.path;
         });
+
+        if (email.isNotEmpty) {
+          await AuthService.setProfileImagePath(email, pickedFile.path);
+        }
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('Foto profil diperbarui'),
+            backgroundColor: Colors.green,
+          ),
+        );
       }
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
