@@ -91,10 +91,17 @@ class _AuthWrapperState extends State<AuthWrapper> {
                       color: Colors.white.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: const Icon(
-                      Icons.local_cafe,
-                      color: Colors.white,
-                      size: 40,
+                    clipBehavior: Clip.antiAlias,
+                    child: Image.asset(
+                      'assets/logo.jpg',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(
+                          Icons.local_cafe,
+                          color: Colors.white,
+                          size: 40,
+                        );
+                      },
                     ),
                   ),
                   const SizedBox(height: 24),

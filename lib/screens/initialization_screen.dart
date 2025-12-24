@@ -64,7 +64,7 @@ class InitializationScreen extends StatelessWidget {
                         ),
                         child: ClipOval(
                           child: Image.asset(
-                            'images/app_logo.png',
+                            'assets/logo.jpg',
                             width: 200,
                             height: 200,
                             fit: BoxFit.cover,

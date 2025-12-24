@@ -118,13 +118,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         width: 80,
                         height: 80,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF7b3f00),
                           borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: const Icon(
-                          Icons.local_cafe,
                           color: Colors.white,
-                          size: 40,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.05),
+                              blurRadius: 10,
+                              offset: const Offset(0, 4),
+                            ),
+                          ],
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: Image.asset(
+                          'assets/logo.jpg',
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return const Icon(
+                              Icons.local_cafe,
+                              color: Color(0xFF7b3f00),
+                              size: 40,
+                            );
+                          },
                         ),
                       ),
                       const SizedBox(height: 20),
