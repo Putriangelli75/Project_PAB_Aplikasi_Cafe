@@ -1,7 +1,5 @@
 name: aplikasi_cafe
 description: "Aplikasi kafe dibuat dengan menggunakan flutter."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-version: 1.0.0+1
 
 environment:
   sdk: ^3.9.2
@@ -37,5 +35,21 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/logo.jpg
-    - assets/images/
+    - assets/logo.png
+    - assets/images/nostalgia/
+    - assets/images/koat/
+    - assets/images/for-good-luck/
+    - assets/images/loer/
+    - assets/images/nako/
+    - assets/images/sanjo/
+    - assets/images/nagara/
+    - assets/images/soree/
+    - assets/images/taki/
+    - assets/images/cce-space/
+    - assets/images/dayone/
+    - assets/images/days-cafe/
+    - assets/images/eightynine/
+    - assets/images/enamdua/
+    - assets/images/kopi-dari-hati/
+    - assets/images/luthier/
+    - assets/images/york-cafe/

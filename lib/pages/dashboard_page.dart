@@ -68,7 +68,7 @@ class FavoriteScreen extends StatelessWidget {
             ),
             child: ClipOval(
               child: Image.asset(
-                'images/profile_placeholder.png',
+                'assets/logo.jpg',
                 width: 40,
                 height: 40,
                 fit: BoxFit.cover,

@@ -4,7 +4,9 @@ import 'package:aplikasi_cafe/screens/initialization_screen.dart';
 import 'package:aplikasi_cafe/auth/signin_screen.dart';
 import 'package:aplikasi_cafe/utils/auth_service.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AuthService.initializeDummyUsers();
   runApp(const MyApp());
 }
 
@@ -46,31 +48,43 @@ class _AuthWrapperState extends State<AuthWrapper> {
   }
 
   Future<void> _initializeApp() async {
-    // Simulate app initialization
-    await Future.delayed(const Duration(seconds: 2));
+    try {
+      // Simulate app initialization
+      await Future.delayed(const Duration(seconds: 2));
 
-    // Check if user is logged in
-    final isLoggedIn = await AuthService.isLoggedIn();
-    final isFirstTime = await AuthService.isFirstTime();
+      // Check if user is logged in
+      final isLoggedIn = await AuthService.isLoggedIn();
+      final isFirstTime = await AuthService.isFirstTime();
 
-    setState(() {
-      _isLoading = false;
-    });
+      if (!mounted) return;
+      setState(() {
+        _isLoading = false;
+      });
 
-    if (!isFirstTime && !isLoggedIn) {
-      // User has used app before but not logged in
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const SignInScreen()),
-      );
-    } else if (isFirstTime) {
-      // First time user - show initialization
+      if (!isFirstTime && !isLoggedIn) {
+        // User has used app before but not logged in
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const SignInScreen()),
+        );
+      } else if (isFirstTime) {
+        // First time user - show initialization
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const InitializationScreen()),
+        );
+      } else {
+        // User is logged in - go to home
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      }
+    } catch (e) {
+      // If initialization fails, ensure we still leave the splash state
+      if (!mounted) return;
+      setState(() {
+        _isLoading = false;
+      });
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (context) => const InitializationScreen()),
-      );
-    } else {
-      // User is logged in - go to home
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
       );
     }
   }

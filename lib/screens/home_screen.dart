@@ -166,7 +166,7 @@ class _KafeCatalogScreenState extends State<KafeCatalogScreen> {
             ),
             child: ClipOval(
               child: Image.asset(
-                'images/profile_placeholder.png',
+                'assets/logo.jpg',
                 width: 40,
                 height: 40,
                 fit: BoxFit.cover,
